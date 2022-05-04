@@ -29,30 +29,31 @@ public class FlightTest {
 
     @Test
     public void canAddPassenger(){
-        flight1.addPassenger(Jack);
-        flight1.addPassenger(Adan);
+        flight1.addPassengerToFlight(Jack);
+        flight1.addPassengerToFlight(Adan);
         assertThat(flight1.getPassengers().size()).isEqualTo(2);
     }
 
     @Test
     public void canRemovePassenger(){
-        flight1.addPassenger(Jack);
-        flight1.addPassenger(Adan);
+        flight1.addPassengerToFlight(Jack);
+        flight1.addPassengerToFlight(Adan);
         assertThat(flight1.getPassengers().size()).isEqualTo(2);
-        flight1.removePassenger(Jack);
+        flight1.removePassengerFromFlight(Jack);
         assertThat(flight1.getPassengers().size()).isEqualTo(1);
     }
 
     @Test
+    //supposed to fail
     public void cannotAddDuplicatePassenger(){
-        flight1.addPassenger(Jack);
-        flight1.addPassenger(Jack);
+        flight1.addPassengerToFlight(Jack);
+        flight1.addPassengerToFlight(Jack);
         assertThat(flight1.getPassengers().size()).isEqualTo(2);
     }
 
     @Test
     public void cannotRemovePassengerNotOnFlight(){
-        flight1.removePassenger(Jack);
+        flight1.removePassengerFromFlight(Jack);
         assertThat(flight1.getPassengers().size()).isEqualTo(0);
     }
 }

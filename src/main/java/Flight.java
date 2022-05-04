@@ -28,7 +28,7 @@ public class Flight {
         return passengers;
     }
 
-    public void addExPassenger (Passenger passenger) throws Exception{
+    public void addPassengerException (Passenger passenger) throws Exception{
         if(!passengers.contains(passenger)) {
             passengers.add(passenger);
         } else {
@@ -36,16 +36,16 @@ public class Flight {
         }
     }
 
-    public void addPassenger(Passenger passenger){
+    public void addPassengerToFlight(Passenger passenger){
         try{
-            addExPassenger(passenger);
+            addPassengerException(passenger);
         } catch (Exception exception){
             System.out.println(exception.getMessage());
             exception.printStackTrace();
         }
     }
 
-    public void removeExPassenger (Passenger passenger) throws Exception{
+    public void removePassengerException(Passenger passenger) throws Exception{
         if(passengers.contains(passenger)) {
             passengers.remove(passenger);
         } else {
@@ -53,9 +53,9 @@ public class Flight {
         }
     }
 
-    public void removePassenger(Passenger passenger){
+    public void removePassengerFromFlight(Passenger passenger){
         try{
-            removeExPassenger(passenger);
+            removePassengerException(passenger);
         } catch (Exception exception){
             System.out.println(exception.getMessage());
             exception.printStackTrace();
