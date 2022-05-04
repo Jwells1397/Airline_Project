@@ -42,4 +42,17 @@ public class FlightTest {
         flight1.removePassenger(Jack);
         assertThat(flight1.getPassengers().size()).isEqualTo(1);
     }
+
+    @Test
+    public void cannotAddDuplicatePassenger(){
+        flight1.addPassenger(Jack);
+        flight1.addPassenger(Jack);
+        assertThat(flight1.getPassengers().size()).isEqualTo(2);
+    }
+
+    @Test
+    public void cannotRemovePassengerNotOnFlight(){
+        flight1.removePassenger(Jack);
+        assertThat(flight1.getPassengers().size()).isEqualTo(0);
+    }
 }
