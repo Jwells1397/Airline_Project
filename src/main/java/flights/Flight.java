@@ -1,3 +1,5 @@
+package flights;
+
 import idgen.FlightIdGen;
 import passenger.Passenger;
 

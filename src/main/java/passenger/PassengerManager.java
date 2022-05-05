@@ -19,4 +19,13 @@ public class PassengerManager {
         return passengersWaiting;
     }
 
+    public String getPassengerLounge(){
+        String passString = "";
+        for(int i = 0; i< passengersWaiting.size();i++){
+            Passenger p = passengersWaiting.get(i);
+            passString += "Name: " + p.getName() + " Id: " + p.getPassId() + "\n";
+        }
+        return passString;
+    }
+
 }
