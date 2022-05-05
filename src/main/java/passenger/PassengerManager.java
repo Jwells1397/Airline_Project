@@ -10,10 +10,12 @@ public class PassengerManager {
         passengersWaiting = new ArrayList<>();
     }
 
-    public void createPassenger(){
-        Passenger passenger = new Passenger("",0);
-        passenger.setName("name");
-        passenger.setContactInfo(00);
+    public void createPassenger(String name, int contactInfo){
+        Passenger passenger = new Passenger(name,contactInfo);
         passengersWaiting.add(passenger);
+    }
+
+    public ArrayList<Passenger> getPassengersWaiting() {
+        return passengersWaiting;
     }
 }
