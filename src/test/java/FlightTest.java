@@ -1,6 +1,7 @@
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import passenger.Passenger;
 
 public class FlightTest {
 
@@ -48,7 +49,7 @@ public class FlightTest {
     public void cannotAddDuplicatePassenger(){
         flight1.addPassengerToFlight(Jack);
         flight1.addPassengerToFlight(Jack);
-        assertThat(flight1.getPassengers().size()).isEqualTo(2);
+        assertThat(flight1.getPassengers().size()).isEqualTo(1);
     }
 
     @Test

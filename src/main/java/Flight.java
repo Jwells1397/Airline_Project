@@ -1,3 +1,6 @@
+import idgen.FlightIdGen;
+import passenger.Passenger;
+
 import java.util.ArrayList;
 
 public class Flight {
@@ -28,34 +31,26 @@ public class Flight {
         return passengers;
     }
 
-    public void addPassengerException (Passenger passenger) throws Exception{
-        if(!passengers.contains(passenger)) {
-            passengers.add(passenger);
-        } else {
-            throw new Exception("Passenger already on flight");
-        }
-    }
-
     public void addPassengerToFlight(Passenger passenger){
         try{
-            addPassengerException(passenger);
+            if(!passengers.contains(passenger)) {
+                passengers.add(passenger);
+            } else {
+                throw new Exception("passenger.Passenger already on flight");
+            }
         } catch (Exception exception){
             System.out.println(exception.getMessage());
             exception.printStackTrace();
         }
     }
 
-    public void removePassengerException(Passenger passenger) throws Exception{
-        if(passengers.contains(passenger)) {
-            passengers.remove(passenger);
-        } else {
-            throw new Exception("Passenger not on flight");
-        }
-    }
-
     public void removePassengerFromFlight(Passenger passenger){
         try{
-            removePassengerException(passenger);
+            if(passengers.contains(passenger)) {
+                passengers.remove(passenger);
+            } else {
+                throw new Exception("passenger.Passenger not on flight");
+            }
         } catch (Exception exception){
             System.out.println(exception.getMessage());
             exception.printStackTrace();

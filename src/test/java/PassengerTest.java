@@ -1,6 +1,7 @@
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import passenger.Passenger;
 
 public class PassengerTest {
 

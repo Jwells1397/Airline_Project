@@ -33,4 +33,10 @@ public class FlightBoard {
     public ArrayList<Flight> getAllFlightsList(){
         return flights;
     }
+
+    public void start(){
+        System.out.println("Welcome to the app, enter your name");
+        String userName = scanner.nextLine();
+        System.out.println("Hello " + userName + " choose an option");
+    }
 }
