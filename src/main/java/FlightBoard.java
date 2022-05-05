@@ -32,6 +32,11 @@ public class FlightBoard {
         flights.add(flight);
     }
 
+    public void addFlight(String destination){
+        Flight flight = new Flight(destination);
+        flights.add(flight);
+    }
+
     public void cancelFlight(Flight flight){
         flights.remove(flight);
     }
@@ -43,19 +48,31 @@ public class FlightBoard {
     public void start(){
         System.out.println("Welcome to the app, enter your name");
         String userName = scanner.nextLine();
-        System.out.println("Hello " + userName + " choose an option" + "\n" + "addpassenger - add a passenger"+ "\n" + "display - display all flights" + "\n" + "addflight - add a flight");
-        String option = scanner.nextLine();
-        switch(option){
-            case "addpassenger":
-                System.out.println("Add a name");
-                String name = scanner.nextLine();
-                System.out.println("Add contact info");
-                int contactInfo = scanner.nextInt();
-                passengerManager.createPassenger(name,contactInfo);
-                System.out.println(passengerManager.getPassengersWaiting());
-            case "display":
-                System.out.println(getFlights());
-            case "addflight":
+        while(!exit){
+            System.out.println("Hello " + userName + " choose an option" + "\n" + "exit - exit the app" + "\n" + "addpassenger - add a passenger"+ "\n" + "display - display all flights" + "\n" + "addflight - add a flight");
+            String option = scanner.nextLine();
+            switch(option) {
+                case "addpassenger":
+                    System.out.println("Add a name");
+                    String name = scanner.nextLine();
+                    System.out.println("Add contact info");
+                    int contactInfo = scanner.nextInt();
+                    passengerManager.createPassenger(name, contactInfo);
+                    System.out.println("Added " + name +" to lounge");
+                    break;
+                case "display":
+                    System.out.println(getFlights());
+                    break;
+                case "addflight":
+                    System.out.println("Add a destination");
+                    String destination = scanner.nextLine();
+                    addFlight(destination);
+                    System.out.println("Added flight to " + destination);
+                    break;
+                case "exit":
+                    exit = true;
+                    break;
+            }
         }
     }
 }

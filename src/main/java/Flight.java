@@ -15,6 +15,8 @@ public class Flight {
         this.FlightId =  FlightIdGen.genFlightId();
     }
 
+
+
     public String getDestination() {
         return destination;
     }
@@ -36,7 +38,7 @@ public class Flight {
             if(!passengers.contains(passenger)) {
                 passengers.add(passenger);
             } else {
-                throw new Exception("passenger.Passenger already on flight");
+                throw new Exception("Passenger already on flight");
             }
         } catch (Exception exception){
             System.out.println(exception.getMessage());

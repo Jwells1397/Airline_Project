@@ -18,4 +18,5 @@ public class PassengerManager {
     public ArrayList<Passenger> getPassengersWaiting() {
         return passengersWaiting;
     }
+
 }
