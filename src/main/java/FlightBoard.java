@@ -13,8 +13,13 @@ public class FlightBoard {
         this.flights = new ArrayList<>();
     }
 
-    public List<String> getFlights(){
-        return flights.stream().map(Object::toString).collect(Collectors.toList());
+    public String getFlights(){
+        String flightString = "";
+        for(int i = 0; i< flights.size();i++){
+            Flight f = flights.get(i);
+            flightString += "Flight to: " + f.getDestination() + " Id: " + f.getFlightId() + "\n";
+        }
+        return flightString;
     }
 
     public void addFlight(Flight flight){
@@ -25,7 +30,7 @@ public class FlightBoard {
         flights.remove(flight);
     }
 
-    public ArrayList<Flight> getAllFlights(){
+    public ArrayList<Flight> getAllFlightsList(){
         return flights;
     }
 }
