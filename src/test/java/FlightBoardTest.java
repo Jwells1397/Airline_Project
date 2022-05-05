@@ -45,4 +45,20 @@ public class FlightBoardTest {
         flightBoard.addFlight(flight3);
         assertThat(flightBoard.getFlights()).isEqualTo(1);
     }
+
+    @Test
+    public void canGetFlightFromDestination(){
+        flightBoard.addFlight(flight1);
+        flightBoard.addFlight(flight2);
+        flightBoard.addFlight(flight3);
+        assertThat(flightBoard.getFlight("Rome")).isNotNull();
+    }
+
+    @Test
+    public void canGetFlightFromId(){
+        flightBoard.addFlight(flight1);
+        flightBoard.addFlight(flight2);
+        flightBoard.addFlight(flight3);
+        assertThat(flightBoard.getFlight(flight1.getFlightId())).isNotNull();
+    }
 }

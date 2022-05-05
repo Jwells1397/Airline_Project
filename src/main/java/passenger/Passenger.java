@@ -22,15 +22,7 @@ public class Passenger {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getContactInfo(){
-        return contactInfo;
-    }
-
-    public void setContactInfo(int contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setPassId(int passId) {
+        PassId = passId;
     }
 }
