@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class FlightBoard {
 
-    static ArrayList<Flight> flights;
+    ArrayList<Flight> flights;
 
 
     public FlightBoard(){
@@ -77,6 +77,4 @@ public class FlightBoard {
     public ArrayList<Flight> getAllFlightsList(){
         return flights;
     }
-
-
 }

@@ -53,7 +53,7 @@ public class Flight {
             if(passengers.contains(passenger)) {
                 passengers.remove(passenger);
             } else {
-                throw new Exception("passenger.Passenger not on flight");
+                throw new Exception("Passenger not on flight");
             }
         } catch (Exception exception){
             System.out.println(exception.getMessage());
